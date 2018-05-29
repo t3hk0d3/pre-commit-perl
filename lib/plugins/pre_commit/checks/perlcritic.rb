@@ -16,7 +16,7 @@ module PreCommit
 
         stdout, stderr, status = Open3.capture3('/usr/bin/env', perlcritic_bin, *args)
 
-        return 'foo' if status.success?
+        return if status.success?
 
         return stdout
       end
